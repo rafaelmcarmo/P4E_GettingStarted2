@@ -1,19 +1,24 @@
-largest  = None
+largest = None
 smallest = None
-while True:
-    num = input("Enter a number: ")
-    if num == "done" : break
 
-    try:
+while True:
+    num = input("Enter a Number: ")
+    if num == "done": break
+    
+    try :
         n = int(num)
-    except ValueError:
-        print('Invalid input')
+    except:
+        print("Not a Number")
         continue
     else:
-        if (largest  < n): 
+        if (largest is None):
             largest = n
-        if (smallest > n) or (smallest is None): 
+        elif (largest < n):
+            largest = n
+        if (smallest is None):
+            smallest = n
+        elif (smallest > n):
             smallest = n
 
-print("Maximum is", largest)
-print("Minimum is", smallest)
+print("Smallest is ", smallest)
+print("Largest is ", largest)
